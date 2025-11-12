@@ -1,0 +1,17 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "localized" : {
+      "comment" : "localized string example",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localized into English"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

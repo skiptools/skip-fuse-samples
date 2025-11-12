@@ -5,14 +5,25 @@ be built for both Android and Darwin platforms, as well as
 a transpiled `SkipFuseSamplesTests` module that demonstrates
 accessing the bridged Swift from the Kotlin.
 
+The main components of this package are:
+
+- [Sources/SkipFuseSamples/SkipFuseSamples.swift](Sources/SkipFuseSamples/SkipFuseSamples.swift): a natively-compiled Swift file that contains some example functionality.
+- [Sources/SkipFuseSamples/Skip/skip.yml](Sources/SkipFuseSamples/Skip/skip.yml): the Skip configuration file that indicates that the `SkipFuseSamples` module should be compiled natively and bridged using the [`kotlincompat`](https://skip.tools/docs/bridging/) mode.
+- [Tests/SkipFuseSamplesTests/SkipFuseSamplesTests.swift](Tests/SkipFuseSamplesTests/SkipFuseSamplesTests.swift): the test cases that will be run both natively on Darwin platforms, and transpiled to Kotlin to test bridged structures on Android
+- [.github/workflows/ci.yml](.github/workflows/ci.yml): GitHub continuous integration that runs test cases against macOS, iOS, and Android.
+
 Tests can be run locally from Xcode, which will build and
 run using the local JVM on the macOS host using the Robolectic
 Android emulation libraries. To run tests against an actual
 Android emulator or device, set the environment `ANDROID_SERIAL`
 to the identifier of the emulator (usually "emulator-5554") or device
-and then run the test cases.
+and then run the test cases. See 
+[https://skip.tools/docs/testing](https://skip.tools/docs/testing)
+for testing details, and for more information on creating a
+hybrid project that follows this project's structure', see
+[https://skip.tools/blog/skip-native-tech-preview/](https://skip.tools/blog/skip-native-tech-preview/).
 
-Similiarly, tests can be run locally from the command-line with:
+Tests can also be run locally from the command-line with:
 
 ```
 swift test
