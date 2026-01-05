@@ -45,6 +45,11 @@ class SkipFuseSamplesTests : XCTestCase {
     }
 
     @MainActor func testMainActorClosureHolder() async throws {
+        if isRobolectric {
+            // SkipBridge/Closures.swift:201: Fatal error: Incorrect actor executor assumption; Expected same executor as MainActor.
+            throw XCTSkip("testMainActorClosureHolder only works on Android and crashes in Robolectric")
+        }
+
         var count = 0
         // `- error: converting function value of type '@MainActor () throws -> Void' to '() throws -> Void' loses global actor 'MainActor'
         let holder = MainActorClosureHolder(mainActorClosure: { count += 1 })
