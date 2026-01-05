@@ -11,8 +11,8 @@ let package = Package(
         .library(name: "SkipFuseSamples", type: .dynamic, targets: ["SkipFuseSamples"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.6.29"),
-        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0")
+        .package(url: "https://source.skip.tools/skip.git", from: "1.6.35"),
+        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.2")
     ],
     targets: [
         .target(name: "SkipFuseSamples", dependencies: [
