@@ -30,6 +30,14 @@ public class SkipFuseSamplesModule {
     }
 }
 
+public class MainActorClosureHolder {
+    public var mainActorClosure: @MainActor () -> Void = { }
+
+    public init(mainActorClosure: @escaping @MainActor () -> Void) {
+        self.mainActorClosure = mainActorClosure
+    }
+}
+
 public protocol AsyncCallbackProtocol : AnyObject, Sendable {
     func callback(param: Error) async
 }

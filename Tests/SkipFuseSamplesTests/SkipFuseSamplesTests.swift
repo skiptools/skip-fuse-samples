@@ -43,6 +43,14 @@ class SkipFuseSamplesTests : XCTestCase {
         // runs both transpiled and natively
         await AsyncCallbackProtocolHelper.invokeCallback(with: handler, param: AsyncCallbackParam())
     }
+
+    @MainActor func testMainActorClosureHolder() async throws {
+        var count = 0
+        // `- error: converting function value of type '@MainActor () throws -> Void' to '() throws -> Void' loses global actor 'MainActor'
+        let holder = MainActorClosureHolder(mainActorClosure: { count += 1 })
+        holder.mainActorClosure()
+        XCTAssertEqual(1, count)
+    }
 }
 
 #if SKIP
