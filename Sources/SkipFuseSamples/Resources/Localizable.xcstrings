@@ -1,6 +1,18 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "loc" : {
+      "comment" : "localized string example",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localized into English"
+          }
+        }
+      }
+    },
     "localized" : {
       "comment" : "localized string example",
       "localizations" : {

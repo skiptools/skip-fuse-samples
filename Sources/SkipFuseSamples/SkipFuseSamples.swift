@@ -2,7 +2,7 @@
 
 import Foundation
 import Observation
-#if os(Android)
+#if os(Android) || ROBOLECTRIC
 import SkipFuse
 #endif
 
@@ -19,7 +19,13 @@ public class SkipFuseSamplesModule {
         public var id: UUID
 
         public func localizedString() -> String {
+            //AndroidLocalizedString()("localized", bundle: .module, comment: "localized string example")
             NSLocalizedString("localized", bundle: .module, comment: "localized string example")
+
+            //String(localized: "localized", bundle: .module, comment: "localized string example")
+
+            //String(localized: <#T##StaticString#>, options: <#T##String.LocalizationOptions#>, table: <#T##String?#>, bundle: <#T##Bundle?#>, locale: <#T##Locale#>, comment: <#T##StaticString?#>)
+
         }
     }
 }

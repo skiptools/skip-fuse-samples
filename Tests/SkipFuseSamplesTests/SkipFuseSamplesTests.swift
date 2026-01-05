@@ -26,6 +26,8 @@ class SkipFuseSamplesTests : XCTestCase {
         let x1 = try await SkipFuseSamplesModule.createBridgedSampleStruct(id: id)
         let x2 = try await SkipFuseSamplesModule.createBridgedSampleStruct(id: id)
         XCTAssertEqual(x1, x2)
+
+        //XCTAssertEqual("Localized into English", x1.localizedString())
     }
 
     func testFuseCallbackImplementation() async throws {
