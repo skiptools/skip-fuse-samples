@@ -8,7 +8,7 @@ accessing the bridged Swift from the Kotlin.
 The main components of this package are:
 
 - [Sources/SkipFuseSamples/SkipFuseSamples.swift](Sources/SkipFuseSamples/SkipFuseSamples.swift): a natively-compiled Swift file that contains some example functionality.
-- [Sources/SkipFuseSamples/Skip/skip.yml](Sources/SkipFuseSamples/Skip/skip.yml): the Skip configuration file that indicates that the `SkipFuseSamples` module should be compiled natively and bridged using the [`kotlincompat`](https://skip.tools/docs/bridging/) mode.
+- [Sources/SkipFuseSamples/Skip/skip.yml](Sources/SkipFuseSamples/Skip/skip.yml): the Skip configuration file that indicates that the `SkipFuseSamples` module should be compiled natively and bridged using the [`kotlincompat`](https://skip.dev/docs/bridging/) mode.
 - [Tests/SkipFuseSamplesTests/SkipFuseSamplesTests.swift](Tests/SkipFuseSamplesTests/SkipFuseSamplesTests.swift): the test cases that will be run both natively on Darwin platforms, and transpiled to Kotlin to test bridged structures on Android
 - [.github/workflows/ci.yml](.github/workflows/ci.yml): GitHub continuous integration that runs test cases against macOS, iOS, and Android.
 
@@ -18,10 +18,10 @@ Android emulation libraries. To run tests against an actual
 Android emulator or device, set the environment `ANDROID_SERIAL`
 to the identifier of the emulator (usually "emulator-5554") or device
 and then run the test cases. See 
-[https://skip.tools/docs/testing](https://skip.tools/docs/testing)
+[https://skip.dev/docs/testing](https://skip.dev/docs/testing)
 for testing details, and for more information on creating a
 hybrid project that follows this project's structure', see
-[https://skip.tools/blog/skip-native-tech-preview/](https://skip.tools/blog/skip-native-tech-preview/).
+[https://skip.dev/blog/skip-native-tech-preview/](https://skip.dev/blog/skip-native-tech-preview/).
 
 Tests can also be run locally from the command-line with:
 
@@ -39,7 +39,7 @@ ANDROID_SERIAL=emulator-5554 swift test
 ## Building
 
 This project is a free Swift Package Manager module that uses the
-[Skip](https://skip.tools) plugin to transpile Swift into Kotlin.
+[Skip](https://skip.dev) plugin to transpile Swift into Kotlin.
 
 Building the module requires that Skip be installed using
 [Homebrew](https://brew.sh) with `brew install skiptools/skip/skip`.
