@@ -1,5 +1,5 @@
 // swift-tools-version: 6.1
-// This is a Skip (https://skip.tools) package that demonstrates
+// This is a Skip (https://skip.dev) package that demonstrates
 // testing a bridged Swift module using a transpiled test case
 import PackageDescription
 
