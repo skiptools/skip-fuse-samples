@@ -75,3 +75,15 @@ public struct Callbacks: @unchecked Sendable {
         self.didSelectSettings = didSelectSettings
     }
 }
+
+// SKIP @bridgeMembers
+// SKIP INSERT: @kotlinx.serialization.Serializable
+public final class SerializableType {
+    public var name: String
+    public var age: Int
+
+    public init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}

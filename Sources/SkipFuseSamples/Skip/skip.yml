@@ -1,11 +1,6 @@
 # Configuration file for Skip (https://skip.dev) project
 #
 # Kotlin dependencies and Gradle build options for this module can be configured here
-#build:
-#  contents:
-#    - block: 'dependencies'
-#      contents:
-#        - 'implementation("androidx.compose.runtime:runtime")'
 
 # this is a natively-compiled SkipFuse module
 skip:
@@ -13,3 +8,12 @@ skip:
   bridging:
     enabled: true
     options: 'kotlincompat'
+
+build:
+  contents:
+    - block: 'plugins'
+      contents:
+        - 'kotlin("plugin.serialization") version "2.0.0"'
+    - block: 'dependencies'
+      contents:
+        - 'implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")'
