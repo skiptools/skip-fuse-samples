@@ -76,3 +76,18 @@ public struct Callbacks: @unchecked Sendable {
         self.didSelectSettings = didSelectSettings
     }
 }
+
+// TODO: We need to use a custom delegating serializer (see https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/serializers.md#delegating-serializers ), otherwise we just serialize the internal `Swift_peer` property, which isn't what we want.
+// TODO: SKIP INSERT: @kotlinx.serialization.Serializable(with = SerializableTypeSerializer::class)
+
+// SKIP @bridgeMembers
+// SKIP INSERT: @kotlinx.serialization.Serializable
+public final class SerializableType {
+    public var name: String
+    public var age: Int
+
+    public init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}

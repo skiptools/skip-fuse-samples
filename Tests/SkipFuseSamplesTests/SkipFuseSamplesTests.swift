@@ -56,7 +56,20 @@ class SkipFuseSamplesTests : XCTestCase {
         holder.mainActorClosure()
         XCTAssertEqual(1, count)
     }
+
+    func testKotlinSerializable() async throws {
+        let ser = SerializableType(name: "Steve", age: 25)
+        #if SKIP
+        let json = try kotlinx.serialization.json.Json.encodeToString(value: ser)
+        print("\n\nSerializableType JSON: \(json)\n\n")
+        // SerializableType JSON: {"Swift_peer":105553155846144}
+        #endif
+    }
 }
+
+
+
+
 
 #if SKIP
 final class KotlinAsyncCallback : AsyncCallbackProtocol {
